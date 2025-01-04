@@ -41,6 +41,7 @@
     # apps
     beeper
     discord
+    gimp
     kate
     obsidian
     spotify
