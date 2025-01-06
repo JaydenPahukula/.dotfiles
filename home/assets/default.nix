@@ -1,6 +1,6 @@
 # assets
-{config, ...}: {
-  config.assets = {
+{...}: {
+  assets = {
     wallpaper = ./wallpaper.png;
   };
 }
