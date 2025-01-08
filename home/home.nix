@@ -4,6 +4,7 @@
     ./assets
     ./config/chrome.nix
     ./config/colors.nix
+    ./config/bash.nix
     ./config/fonts.nix
     ./config/git.nix
     ./config/ipod.nix
@@ -25,9 +26,6 @@
 
   # enable home manager
   programs.home-manager.enable = true;
-
-  # enable bash
-  programs.bash.enable = true;
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
