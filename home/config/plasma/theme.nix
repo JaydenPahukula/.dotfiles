@@ -37,5 +37,8 @@
 
       cursor.theme = "Hackneyed";
     };
+
+    # fix wallpaper
+    startup.desktopScript."wallpaper_picture".runAlways = true;
   };
 }
