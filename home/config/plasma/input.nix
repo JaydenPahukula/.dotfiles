@@ -60,6 +60,7 @@
           tapToClick
           twoFingerTap
           vendorId
+          scrollSpeed
           ;
       }
     ];
