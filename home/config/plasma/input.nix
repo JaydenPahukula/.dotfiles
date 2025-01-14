@@ -13,7 +13,7 @@
       productId = "0274";
       rightClickMethod = "twoFingers";
       scrollMethod = "twoFingers";
-      scrollSpeed = 0.2;
+      scrollSpeed = 0.1;
       tapAndDrag = false;
       tapToClick = true;
       twoFingerTap = "rightClick";
