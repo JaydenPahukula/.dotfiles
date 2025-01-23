@@ -2,9 +2,10 @@
 {pkgs, ...}: {
   imports = [
     ./assets
+    ./config/bash.nix
     ./config/chrome.nix
     ./config/colors.nix
-    ./config/bash.nix
+    ./config/direnv.nix
     ./config/fonts.nix
     ./config/git.nix
     ./config/ipod.nix
