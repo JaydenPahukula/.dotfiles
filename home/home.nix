@@ -42,6 +42,7 @@
     discord
     gimp
     kate
+    libreoffice-qt6
     obsidian
     spotify
     vscode
