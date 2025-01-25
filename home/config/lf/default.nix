@@ -106,6 +106,8 @@ in {
       "<space>" = "toggle";
       "<c-a>" = "glob-select *";
       "<c-d>" = "unselect";
+      r = "rename";
+      "<f-2>" = "rename";
     };
 
     previewer.source = previewer_script;
