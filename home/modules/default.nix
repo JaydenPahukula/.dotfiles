@@ -1,6 +1,6 @@
 {
   imports = [
-    ./assets.nix
+    ./wallpaper.nix
     ./scripts.nix
   ];
 }

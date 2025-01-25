@@ -1,7 +1,6 @@
 # main home configuration
 {pkgs, ...}: {
   imports = [
-    ./assets
     ./config/bash.nix
     ./config/chrome.nix
     ./config/colors.nix
@@ -16,7 +15,9 @@
     ./config/trash.nix
     ./config/waybar.nix
     ./config/yakuake
+    ./modules
     ./scripts
+    ./wallpaper
   ];
 
   home = rec {

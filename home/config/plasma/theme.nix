@@ -11,8 +11,8 @@
   programs.plasma = {
     workspace.cursor.theme = "Hackneyed";
 
-    workspace.wallpaper = config.assets.wallpaper;
-    kscreenlocker.appearance.wallpaper = config.assets.wallpaper;
+    workspace.wallpaper = config.wallpaper;
+    kscreenlocker.appearance.wallpaper = config.wallpaper;
 
     # fix wallpaper
     startup.desktopScript."wallpaper_picture".runAlways = true;
