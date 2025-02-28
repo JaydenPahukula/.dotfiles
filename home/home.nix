@@ -45,12 +45,14 @@
     kate
     libreoffice-qt6
     obsidian
+    postman
     spotify
     vscode
 
     # utils
     libnotify
     wl-clipboard
+    btop
 
     # games
     prismlauncher
