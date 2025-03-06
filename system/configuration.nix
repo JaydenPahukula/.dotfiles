@@ -76,6 +76,8 @@
   # disable network wait service (this caused boot to be slow)
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  services.usbmuxd.enable = true;
+
   # make apps not blurry
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
