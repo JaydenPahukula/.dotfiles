@@ -42,7 +42,7 @@
     beeper
     discord
     gimp
-    kate
+    kdePackages.kate
     libreoffice-qt6
     obsidian
     postman

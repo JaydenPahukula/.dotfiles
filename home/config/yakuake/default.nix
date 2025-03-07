@@ -7,7 +7,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    yakuake
+    kdePackages.yakuake
     (import ./yakuake-session.nix {inherit pkgs;}) # import yakuake-session script
     # font
     nerd-fonts.dejavu-sans-mono
