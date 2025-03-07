@@ -13,7 +13,7 @@
     ./config/plasma
     ./config/python.nix
     ./config/trash.nix
-    ./config/waybar.nix
+    ./config/waybar
     ./config/yakuake
     ./modules
     ./scripts
