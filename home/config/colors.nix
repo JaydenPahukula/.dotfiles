@@ -30,6 +30,8 @@
       base15 = "#48bbf0"; # light blue
       base16 = "#d670d6"; # light magenta
       base17 = "#d9ab66"; # light brown
+
+      spotify = "#1db954";
     };
   };
 }
