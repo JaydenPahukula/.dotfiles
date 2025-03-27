@@ -13,25 +13,25 @@
       base06 = "#CBCBCB"; # +++
       base07 = "#F0F0F0"; # ++++
 
-      base08 = "#db3030"; # red
-      base09 = "#f09724"; # orange
-      base0A = "#fad32f"; # yellow
-      base0B = "#65cf48"; # green
-      base0C = "#13bdbd"; # aqua
-      base0D = "#2494c8"; # blue
-      base0E = "#bc3fbc"; # magenta
-      base0F = "#9c5916"; # brown
+      base08 = "#DB3030"; # red
+      base09 = "#F09724"; # orange
+      base0A = "#FAD32F"; # yellow
+      base0B = "#65CF48"; # green
+      base0C = "#13BDBD"; # aqua
+      base0D = "#2494C8"; # blue
+      base0E = "#BC3FBC"; # magenta
+      base0F = "#9C5916"; # brown
 
-      base10 = "#f04a4a"; # light red
-      base11 = "#f5a640"; # light orange
-      base12 = "#f7db63"; # light yellow
-      base13 = "#7fe065"; # light green
-      base14 = "#2bccc7"; # light aqua
-      base15 = "#48bbf0"; # light blue
-      base16 = "#d670d6"; # light magenta
-      base17 = "#d9ab66"; # light brown
+      base10 = "#F04A4A"; # light red
+      base11 = "#F5A640"; # light orange
+      base12 = "#F7DB63"; # light yellow
+      base13 = "#7FE065"; # light green
+      base14 = "#2BCCC7"; # light aqua
+      base15 = "#48BBF0"; # light blue
+      base16 = "#D670D6"; # light magenta
+      base17 = "#D9AB66"; # light brown
 
-      spotify = "#1db954";
+      spotify = "#1DB954";
     };
   };
 }
