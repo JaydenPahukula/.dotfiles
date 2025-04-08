@@ -48,6 +48,7 @@
       {
         inherit
           (touchpad)
+          accelerationProfile
           disableWhileTyping
           enable
           name
