@@ -8,6 +8,9 @@
       format.pretty = "oneline";
       log.abbrevCommit = true;
       pull.rebase = true;
+      alias = {
+        "unstage" = "restore --staged";
+      };
     };
   };
 }
