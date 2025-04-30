@@ -24,7 +24,7 @@
     enable = true;
 
     settings."mainBar" = {
-      layer = "top";
+      layer = "bottom"; # so yakuake goes above it
       position = "top";
       height = 24;
       spacing = 20;
