@@ -5,9 +5,9 @@
     ./config/docker.nix
     ./config/garbage.nix
     ./config/locale.nix
+    ./config/login.nix
     ./config/plasma.nix
     ./config/power.nix
-    ./config/sddm.nix
     ./config/wireshark.nix
     ./hardware-configuration.nix
   ];
