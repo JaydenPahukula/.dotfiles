@@ -13,6 +13,7 @@
     ./config/plasma
     ./config/python.nix
     ./config/trash.nix
+    ./config/vscode.nix
     ./config/waybar
     ./config/yakuake
     ./modules
@@ -47,7 +48,6 @@
     obsidian
     postman
     spotify
-    vscode
 
     # utils
     libnotify
