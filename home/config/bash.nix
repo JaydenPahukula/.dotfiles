@@ -3,10 +3,22 @@
   programs.bash = {
     enable = true;
     bashrcExtra = let
-      # custom prompt
-      PS1 = ''\[\033[1;\$(if [ \$? == 0 ]; then echo 34; else echo 31; fi)m\]*\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '';
+      RESETCOLOR = "\\[\\033[0m\\]";
+      RED = "\\[\\033[1;31m\\]";
+      GREEN = "\\[\\033[1;32m\\]";
+      BLUE = "\\[\\033[1;34m\\]";
     in ''
-      export PS1="${PS1}";
+      PROMPT_COMMAND='
+        LAST_EXIT=$?
+        if [[ -z $LAST_HISTCMD || $HISTCMD == $LAST_HISTCMD ]]; then
+          COMMAND_WAS_RUN=0
+        else
+          COMMAND_WAS_RUN=1
+        fi
+        LAST_HISTCMD=$HISTCMD
+      '
+
+      PS1='$(if [[ $COMMAND_WAS_RUN == 0 ]]; then echo " "; elif [[ $LAST_EXIT == 0 ]]; then echo "${BLUE}^"; else echo "${RED}^"; fi)${GREEN}[\[\e]0;\u@\h: \w\a\]\u@\h:\w]\''$${RESETCOLOR} ';
     '';
   };
 }
