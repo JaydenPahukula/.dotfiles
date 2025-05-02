@@ -1,7 +1,5 @@
 # theme colors
-{nix-colors, ...}: {
-  imports = [nix-colors.homeManagerModules.default];
-
+{...}: {
   colorScheme = {
     palette = {
       base00 = "#151515"; # ----
