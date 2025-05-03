@@ -5,7 +5,6 @@
     ./config/chrome.nix
     ./config/colors.nix
     ./config/direnv.nix
-    ./config/dunst.nix
     ./config/fonts.nix
     ./config/git.nix
     ./config/ipod.nix
@@ -15,9 +14,9 @@
     ./config/trash.nix
     ./config/vscode.nix
     ./config/waybar
+    ./config/wired.nix
     ./config/yakuake
     ./modules
-    ./scripts
     ./wallpaper
   ];
 

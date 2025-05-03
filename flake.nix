@@ -14,15 +14,20 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-colors.url = "github:misterio77/nix-colors";
+    wired-notify.url = "github:Toqozz/wired-notify";
   };
 
-  outputs = inputs: let
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: let
     system = "x86_64-linux";
-    pkgs = inputs.nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.${system}.extend inputs.wired-notify.overlays.default;
   in {
     # nixos configuration
     nixosConfigurations = {
-      nixos = inputs.nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./system/configuration.nix
@@ -33,16 +38,17 @@
 
     # home manager configuration
     homeConfigurations = {
-      jayden = inputs.home-manager.lib.homeManagerConfiguration {
+      jayden = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           inputs.plasma-manager.homeManagerModules.plasma-manager
           inputs.nix-colors.homeManagerModules.default
+          inputs.wired-notify.homeManagerModules.default
           ./home/home.nix
-          ./home/modules
         ];
         extraSpecialArgs = {
-          nix-colors = inputs.nix-colors;
+          inherit inputs;
+          scripts = import ./home/scripts {inherit pkgs;};
         };
       };
     };

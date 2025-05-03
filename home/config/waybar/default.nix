@@ -2,6 +2,7 @@
 {
   config,
   pkgs,
+  scripts,
   ...
 }: {
   imports = [
@@ -47,7 +48,7 @@
       "custom/nixlogo" = {
         format = "  ";
         tooltip = false;
-        on-click = ". ${config.scripts.logoutPrompt}";
+        on-click = ". ${scripts.logoutPrompt}";
       };
 
       clock = {

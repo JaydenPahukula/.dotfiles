@@ -1,9 +1,25 @@
 # plasma shortcuts
-{...}: {
-  programs.plasma.shortcuts = {
-    kwin = {
-      "Grid View" = "";
-      "Overview" = "Meta+Space";
+{scripts, ...}: {
+  programs.plasma = {
+    shortcuts = {
+      kwin = {
+        "Grid View" = "";
+        "Overview" = "Meta+Space";
+      };
+    };
+    hotkeys.commands = {
+      "volume-up" = {
+        command = "${scripts.volumeUp}";
+        key = "Volume Up";
+      };
+      "volume-down" = {
+        command = "${scripts.volumeDown}";
+        key = "Volume Down";
+      };
+      "volume-mute" = {
+        command = "${scripts.volumeMute}";
+        key = "Volume Mute";
+      };
     };
   };
 }

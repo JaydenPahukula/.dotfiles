@@ -2,7 +2,7 @@
 # look here for settings: https://github.com/KDE/yakuake/blob/master/app/config/yakuake.kcfg
 {
   config,
-  nix-colors,
+  inputs,
   pkgs,
   ...
 }: {
@@ -118,7 +118,7 @@
 
   # color scheme
   programs.plasma.dataFile."konsole/yakuake.colorscheme" = let
-    fmt = nix-colors.lib.conversions.hexToRGBString ",";
+    fmt = inputs.nix-colors.lib.conversions.hexToRGBString ",";
   in
     with config.colorScheme.palette; {
       # background
