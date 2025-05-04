@@ -43,7 +43,7 @@
         format = "<b><span foreground='#${colors.spotify}' size='12pt'></span> %s</b>\\n%b";
       };
       "app-name=discord" = {
-        format = "<b><span foreground='#${colors.discord}' size='12pt'></span> %s</b>\\n%b";
+        format = "<b><span foreground='#${colors.discord}' size='12pt'></span>  %s</b>\\n%b";
       };
       "app-name=volume" = {
         font = "Hack Nerd Font 12";
