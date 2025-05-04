@@ -1,7 +1,7 @@
 # yakuake config
 # look here for settings: https://github.com/KDE/yakuake/blob/master/app/config/yakuake.kcfg
 {
-  config,
+  colors,
   inputs,
   pkgs,
   ...
@@ -120,7 +120,7 @@
   programs.plasma.dataFile."konsole/yakuake.colorscheme" = let
     fmt = inputs.nix-colors.lib.conversions.hexToRGBString ",";
   in
-    with config.colorScheme.palette; {
+    with colors; {
       # background
       Background.Color = fmt base01;
       BackgroundIntense.Color = fmt base01;

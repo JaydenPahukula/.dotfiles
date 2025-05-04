@@ -3,18 +3,17 @@
   imports = [
     ./config/bash.nix
     ./config/chrome.nix
-    ./config/colors.nix
     ./config/direnv.nix
     ./config/fonts.nix
     ./config/git.nix
     ./config/ipod.nix
     ./config/lf
+    ./config/mako.nix
     ./config/plasma
     ./config/python.nix
     ./config/trash.nix
     ./config/vscode.nix
     ./config/waybar
-    ./config/wired.nix
     ./config/yakuake
     ./modules
     ./wallpaper

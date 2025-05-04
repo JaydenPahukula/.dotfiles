@@ -1,5 +1,5 @@
-{config, ...}: {
-  programs.waybar.style = with config.colorScheme.palette; ''
+{colors, ...}: {
+  programs.waybar.style = with colors; ''
     * {
       font-family: Hack Nerd Font Propo, monospace;
       font-size: 13px;
