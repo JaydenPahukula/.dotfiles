@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    hack-font
+    nerd-fonts.hack
   ];
 
   # turn off plasma notifications
@@ -24,6 +24,7 @@
     enable = true;
 
     settings = {
+      font = "Hack Nerd Font 10";
       anchor = "top-right";
       default-timeout = "3000";
       background-color = "#${colors.base00}";
@@ -31,26 +32,41 @@
       border-size = "2";
       border-radius = "3";
       text-color = "#${colors.base07}";
-      outer-margin = "0";
+      progress-color = "#${colors.base0D}";
     };
 
     criterias = {
+      "urgency=critical" = {
+        border-color = "#${colors.base08}";
+      };
+      "app-name=Spotify" = {
+        format = "<b><span foreground='#${colors.spotify}' size='12pt'></span> %s</b>\\n%b";
+      };
+      "app-name=discord" = {
+        format = "<b><span foreground='#${colors.discord}' size='12pt'></span> %s</b>\\n%b";
+      };
       "app-name=volume" = {
-        anchor = "bottom-center";
-        outer-margin = "200";
+        font = "Hack Nerd Font 12";
+        anchor = "top-center";
+        padding = "6,10";
+        margin = "850";
         default-timeout = "1000";
       };
       "app-name=volume-muted" = {
-        anchor = "bottom-center";
-        outer-margin = "200";
+        font = "Hack Nerd Font 12";
+        anchor = "top-center";
+        padding = "6,10";
+        margin = "850";
         default-timeout = "1000";
         text-color = "#${colors.base05}";
       };
       "app-name=volume-loud" = {
-        anchor = "bottom-center";
-        outer-margin = "200";
+        font = "Hack Nerd Font 12";
+        anchor = "top-center";
+        padding = "6,10";
+        margin = "850";
         default-timeout = "1000";
-        text-color = "#${colors.base08}";
+        text-color = "#${colors.base10}";
       };
     };
   };

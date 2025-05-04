@@ -27,4 +27,5 @@
   base17 = "D9AB66"; # light brown
 
   spotify = "1DB954";
+  discord = "5865F2";
 }
