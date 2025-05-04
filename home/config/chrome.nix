@@ -1,10 +1,5 @@
 # google chrome config
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   chromeMimeTypes = [
     "application/pdf"
     "application/rdf+xml"

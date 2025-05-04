@@ -1,6 +1,5 @@
 # waybar config
 {
-  config,
   pkgs,
   scripts,
   ...
