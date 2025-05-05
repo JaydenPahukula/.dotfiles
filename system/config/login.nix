@@ -18,9 +18,11 @@
   # start wayland on login (only on tty1)
   programs.bash.loginShellInit = ". ${pkgs.writeShellScript "start-plasma" ''
     if [[ $(tty) == /dev/tty1 ]]; then
-      echo "Launching KDE Plasma..."
-      startplasma-wayland &
+      echo -e "\nLaunching KDE Plasma...\n"
+      startplasma-wayland
+      logout
+    else
+      echo
     fi
-    echo
   ''}";
 }
