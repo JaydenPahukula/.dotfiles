@@ -68,6 +68,13 @@
         default-timeout = "1000";
         text-color = "#${colors.base10}";
       };
+      "app-name=brightness" = {
+        font = "Hack Nerd Font 12";
+        anchor = "top-center";
+        padding = "6,10";
+        margin = "850";
+        default-timeout = "1000";
+      };
     };
   };
 }

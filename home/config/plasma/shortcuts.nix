@@ -20,6 +20,14 @@
         command = "${scripts.volumeMute}";
         key = "Volume Mute";
       };
+      "brightness-up" = {
+        command = "${scripts.brightnessUp}";
+        key = "Monitor Brightness Up";
+      };
+      "brightness-down" = {
+        command = "${scripts.brightnessDown}";
+        key = "Monitor Brightness Down";
+      };
     };
   };
 }
