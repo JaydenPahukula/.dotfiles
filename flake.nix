@@ -1,5 +1,5 @@
 {
-  description = "My Flake";
+  description = "Jayden's Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,17 +16,13 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    ...
-  }: let
+  outputs = inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = inputs.nixpkgs.legacyPackages.${system};
   in {
     # nixos configuration
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./system/configuration.nix
@@ -37,7 +33,7 @@
 
     # home manager configuration
     homeConfigurations = {
-      jayden = home-manager.lib.homeManagerConfiguration {
+      jayden = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -47,7 +43,7 @@
         extraSpecialArgs = {
           inherit inputs;
           colors = import ./home/colors;
-          scripts = import ./home/scripts {inherit pkgs;};
+          scripts = import ./home/scripts pkgs;
         };
       };
     };
