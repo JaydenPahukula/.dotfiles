@@ -8,11 +8,6 @@
     nerd-fonts.hack
   ];
 
-  # turn off plasma notifications
-  programs.plasma.configFile."plasmarc"."OSD" = {
-    "Enabled" = false;
-  };
-
   # start mako on boot
   programs.plasma.startup.startupScript."mako" = {
     runAlways = true;
