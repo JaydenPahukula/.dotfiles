@@ -97,6 +97,7 @@
     file
     killall
     neofetch
+    openssl
     playerctl
     python312
     traceroute
