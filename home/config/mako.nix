@@ -28,9 +28,7 @@
       border-radius = "3";
       text-color = "#${colors.base07}";
       progress-color = "#${colors.base0D}";
-    };
 
-    criterias = {
       "urgency=critical" = {
         border-color = "#${colors.base08}";
       };
