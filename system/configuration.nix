@@ -84,9 +84,6 @@
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # tailscale
-  services.tailscale.enable = true;
-
   # system packages
   environment.systemPackages = with pkgs; [
     # apps
