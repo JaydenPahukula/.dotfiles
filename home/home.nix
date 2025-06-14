@@ -41,6 +41,7 @@
     beeper
     discord
     gimp
+    gnome-disk-utility
     kdePackages.kate
     libreoffice-qt6
     obsidian
