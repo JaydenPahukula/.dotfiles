@@ -1,1 +1,2 @@
 - fix color stuff
+- move key settings into flake
