@@ -6,7 +6,6 @@
     ./config/direnv.nix
     ./config/fonts.nix
     ./config/git.nix
-    ./config/ipod.nix
     ./config/lf
     ./config/mako.nix
     ./config/plasma
