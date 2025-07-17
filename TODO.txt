@@ -1,2 +1,3 @@
 - fix color stuff
 - move key settings into flake
+- fix btop braille font
