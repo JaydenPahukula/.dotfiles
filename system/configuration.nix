@@ -94,6 +94,7 @@
     file
     killall
     neofetch
+    nix-tree
     openssl
     playerctl
     python312
