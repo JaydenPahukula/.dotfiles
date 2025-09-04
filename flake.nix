@@ -1,10 +1,10 @@
 {
-  description = "Jayden's Flake";
+  description = "Jayden's NixOS configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
@@ -17,35 +17,15 @@
   };
 
   outputs = inputs: let
-    system = "x86_64-linux";
-    pkgs = inputs.nixpkgs.legacyPackages.${system};
+    hosts = {
+      "kayak" = {
+        system = "x86_64-linux";
+      };
+    };
+    mkSystem = import ./util/mksystem.nix {inherit inputs;};
+    mkHome = import ./util/mkhome.nix {inherit inputs;};
   in {
-    # nixos configuration
-    nixosConfigurations = {
-      nixos = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system/configuration.nix
-          inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
-        ];
-      };
-    };
-
-    # home manager configuration
-    homeConfigurations = {
-      jayden = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          inputs.plasma-manager.homeManagerModules.plasma-manager
-          inputs.nix-colors.homeManagerModules.default
-          ./home/home.nix
-        ];
-        extraSpecialArgs = {
-          inherit inputs;
-          colors = import ./home/colors;
-          scripts = import ./home/scripts pkgs;
-        };
-      };
-    };
+    nixosConfigurations = builtins.mapAttrs mkSystem hosts;
+    homeConfigurations = builtins.mapAttrs mkHome hosts;
   };
 }
