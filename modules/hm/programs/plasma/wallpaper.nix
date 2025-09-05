@@ -4,17 +4,17 @@
   ...
 }: {
   options.wallpaper = lib.mkOption {
-    type = lib.types.str;
-    default = "";
-    example = "~/Pictures/wallpaper.png";
+    type = lib.types.nullOr lib.types.path;
+    default = null;
+    example = ./Pictures/wallpaper.png;
     description = ''
       Path to wallpaper file.
 
-      Note that the type is string, so that it will not symlink to /nix/store/.
+      You may need to log out and in to refresh.
     '';
   };
 
-  config.programs.plasma = {
+  config.programs.plasma = lib.mkIf (config.wallpaper != null) {
     workspace.wallpaper = config.wallpaper;
 
     # fix wallpaper issues
