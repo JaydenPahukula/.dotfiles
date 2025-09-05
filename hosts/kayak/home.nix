@@ -21,17 +21,12 @@
     '';
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0" # obsidian needs this
-  ];
-
   home.packages = with pkgs; [
     # apps
     discord
     gimp
     kdePackages.kate
     libreoffice-qt6
-    obsidian
     postman
     spotify
 
