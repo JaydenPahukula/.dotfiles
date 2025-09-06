@@ -21,6 +21,9 @@
       "kayak" = {
         system = "x86_64-linux";
       };
+      "racecar" = {
+        system = "x86_64-linux";
+      };
     };
     mkSystem = import ./util/mksystem.nix {inherit inputs;};
     mkHome = import ./util/mkhome.nix {inherit inputs;};
