@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./chrome.nix
+    ./vscode.nix
   ];
 
   # other default apps

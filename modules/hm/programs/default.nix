@@ -9,7 +9,6 @@
     ./git.nix
     ./python.nix
     ./trash.nix
-    ./vscode.nix
   ];
 
   # misc programs
