@@ -6,6 +6,6 @@
 
   # other default apps
   home.packages = with pkgs; [
-    gnome-disk-utility
+    gparted
   ];
 }
