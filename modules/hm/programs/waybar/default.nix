@@ -100,8 +100,8 @@
         network = {
           interval = 10;
           format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          format-linked = "{ifname} (No IP) ";
+          format-ethernet = "Wired ";
+          format-linked = "Linked (No IP) ";
           format-disconnected = "Disconnected ⚠";
           tooltip-format = "IP = {ipaddr}/{cidr}\nOn {ifname} via {gwaddr}\n\n{bandwidthDownBits}   {bandwidthUpBits} ";
         };
