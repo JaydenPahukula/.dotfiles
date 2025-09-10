@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  # set waybar temp to x86_pkg_temp
-  programs.waybar.temp.thermal-zone = 1;
+  programs.waybar = {
+    temp.thermal-zone = 1; # x86_pkg_temp
+    gpu.hwmon-path = "/sys/class/hwmon/hwmon6/device/gpu_busy_percent";
+  };
 
   home.packages = with pkgs; [
     # apps

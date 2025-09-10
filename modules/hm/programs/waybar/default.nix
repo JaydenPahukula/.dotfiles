@@ -5,14 +5,25 @@
   pkgs,
   ...
 }: {
-  options.programs.waybar.temp = {
-    thermal-zone = lib.mkOption {
+  options.programs.waybar = {
+    temp.thermal-zone = lib.mkOption {
       type = lib.types.number;
       default = null;
       description = ''
         The number of the thermal zone to use for the tempurature module.
 
         Available thermal zones are listed in `/sys/class/thermal/`.
+      '';
+    };
+    gpu.hwmon-path = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      example = "/sys/class/hwmon/hwmon1/device/gpu_busy_percent";
+      description = ''
+        Path to the hwmon file containing GPU usage. The GPU module will not be
+        displayed unless this is defined.
+
+        Note that this is a string and not a path, so that nixos will not symlink it.
       '';
     };
   };
@@ -53,6 +64,7 @@
           "idle_inhibitor"
           "network"
           "memory"
+          "custom/gpu"
           "cpu"
           "temperature"
           "battery"
@@ -110,6 +122,12 @@
           interval = 3;
           format = "Mem {}%";
           tooltip-format = "{used:0.1f}GB out of {total:0.1f}GB";
+        };
+
+        "custom/gpu" = lib.mkIf (config.programs.waybar.gpu.hwmon-path != "") {
+          exec = "cat ${config.programs.waybar.gpu.hwmon-path} 2>/dev/null || echo error";
+          format = "GPU {}%";
+          interval = 3;
         };
 
         cpu = {
