@@ -6,6 +6,8 @@
 }: {
   wallpaper = "${root}/assets/wallpapers/windrises.png";
 
+  programs.waybar.temp.thermal-zone = 2; # SEN5
+
   # set default display scale/position
   programs.plasma.startup.startupScript."displaySetup" = {
     runAlways = true;
