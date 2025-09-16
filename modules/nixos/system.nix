@@ -64,7 +64,10 @@
   programs.git.enable = true;
 
   services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [oxygen];
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    oxygen
+    elisa
+  ];
 
   # disable display managers
   services.displayManager.sddm.enable = false;
