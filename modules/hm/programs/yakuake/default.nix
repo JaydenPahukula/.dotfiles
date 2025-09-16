@@ -105,6 +105,10 @@
     };
   };
 
+  fonts.disabled = [
+    "FreeMono" # this causes braille to be bad
+  ];
+
   # konsole profile
   xdg.dataFile."konsole/yakuake.profile".text = ''
     [Appearance]

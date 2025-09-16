@@ -1,4 +1,3 @@
 - fix color stuff
-- fix btop braille font
 - add readme
 - add more to gpu module
