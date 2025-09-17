@@ -1,6 +1,7 @@
 # nixos modules
 {pkgs, ...}: {
   imports = [
+    ./apps
     ./nix.nix
     ./system.nix
     ./utils.nix
