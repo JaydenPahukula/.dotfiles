@@ -14,6 +14,8 @@
   };
 
   config = {
+    fonts.fontconfig.enable = true;
+
     xdg.configFile."fontconfig/conf.d/78-disable-fonts.conf".text = let
       mkPattern = s: "\n      <pattern><patelt name=\"family\"><string>${s}</string></patelt></pattern>";
     in ''
