@@ -1,6 +1,5 @@
 - fix color stuff
 - add readme
 - add more to gpu module
-- change $EDITOR to vi
 - fix plasma panels
 - racecar sleeping stuff

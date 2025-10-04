@@ -16,4 +16,8 @@
     wirelesstools
     zip
   ];
+
+  environment.variables = {
+    "EDITOR" = "vi";
+  };
 }
