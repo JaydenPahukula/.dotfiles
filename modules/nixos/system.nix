@@ -57,8 +57,17 @@
 
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    oxygen
+    # see https://github.com/NixOS/nixpkgs/blob/nixos-25.05/nixos/modules/services/desktop-managers/plasma6.nix#L157
+    ark
+    discover
+    dolphin-plugins
     elisa
+    gwenview
+    kate
+    khelpcenter
+    krdp
+    okular
+    oxygen
   ];
 
   # disable display managers
