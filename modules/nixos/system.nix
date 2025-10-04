@@ -7,12 +7,6 @@
 }: {
   networking.hostName = name;
 
-  # enable flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   services.fwupd.enable = true;
 
   # audio stuff
