@@ -14,5 +14,7 @@
 
     # utils
     nvtopPackages.amd
+
+    nodejs_22
   ];
 }
