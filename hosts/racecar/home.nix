@@ -15,6 +15,9 @@
     discord
     spotify
 
+    # games
+    prismlauncher
+
     alejandra
     nixd
 
