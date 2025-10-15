@@ -10,6 +10,19 @@
 
   wallpaper = "${root}/assets/wallpapers/adriano.jpg";
 
+  programs.plasma.powerdevil.AC = {
+    turnOffDisplay = {
+      idleTimeout = 1800; # 30 mins
+      idleTimeoutWhenLocked = 300; # 5 mins
+    };
+    dimDisplay = {
+      enable = true;
+      idleTimeout = 1740; # 29 mins
+    };
+    powerButtonAction = "showLogoutScreen";
+    powerProfile = "performance";
+  };
+
   home.packages = with pkgs; [
     # apps
     discord
