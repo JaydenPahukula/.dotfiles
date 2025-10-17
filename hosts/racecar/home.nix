@@ -13,7 +13,7 @@
   programs.plasma.powerdevil.AC = {
     turnOffDisplay = {
       idleTimeout = 1800; # 30 mins
-      idleTimeoutWhenLocked = 300; # 5 mins
+      idleTimeoutWhenLocked = "immediately";
     };
     dimDisplay = {
       enable = true;
