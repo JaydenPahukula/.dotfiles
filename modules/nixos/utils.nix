@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     brightnessctl
+    efibootmgr
     file
     hostname
     killall
@@ -10,6 +11,7 @@
     playerctl
     python312
     traceroute
+    tree
     unzip
     vim
     wget
