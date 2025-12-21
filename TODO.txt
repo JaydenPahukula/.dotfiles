@@ -1,4 +1,3 @@
 - fix color stuff
-- add readme
 - add more to gpu module
 - racecar sleeping stuff
