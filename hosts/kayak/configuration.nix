@@ -15,4 +15,6 @@
   time.timeZone = "America/Chicago";
 
   programs.wireshark.enable = true;
+
+  programs.sober.enable = true;
 }
