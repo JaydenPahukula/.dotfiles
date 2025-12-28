@@ -78,5 +78,7 @@
     # games
     prismlauncher
     smassh
+
+    nodejs_22
   ];
 }
