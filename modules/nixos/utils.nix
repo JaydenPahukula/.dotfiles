@@ -20,6 +20,6 @@
   ];
 
   environment.variables = {
-    "EDITOR" = "vi";
+    "EDITOR" = "vim";
   };
 }

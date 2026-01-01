@@ -4,10 +4,17 @@
     pkgs.kdePackages.kate
   ];
 
-  # TODO make kate default
-  # home.sessionVariables = {
-  #   "EDITOR" = "kate";
-  # };
+  # make kate the default text editor
+  home.sessionVariables = {
+    "EDITOR" = "kate";
+    "VISUAL" = "kate";
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/plain" = "kate";
+    };
+  };
 
   # configuration file
   # (plasma-manager module doesn't have a lot of config options)
@@ -15,7 +22,7 @@
     [General]
     Allow Tab Scrolling=true
     Auto Hide Tabs=true
-    Close After Last=false
+    Close After Last=true
     Close documents with window=true
     Cycle To First Tab=true
     Days Meta Infos=30
@@ -31,15 +38,11 @@
     Open New Tab To The Right Of Current=false
     Output History Limit=100
     Output With Date=false
-    Quickopen Filter Mode=0
-    Quickopen List Mode=true
     Recent File List Entry Count=10
     Restore Window Configuration=true
     SDI Mode=false
     Save Meta Infos=true
-    Session Manager Sort Column=0
-    Session Manager Sort Order=0
-    Show Full Path in Title=false
+    Show Full Path in Title=true
     Show Menu Bar=true
     Show Status Bar=true
     Show Symbol In Navigation Bar=true
@@ -50,11 +53,11 @@
     Show text for left and right sidebar=false
     Show welcome view for new window=false
     Startup Session=new
-    Stash new unsaved files=true
+    Stash new unsaved files=false
     Stash unsaved file changes=false
     Sync section size with tab positions=false
     Tab Double Click New Document=true
-    Tab Middle Click Close Document=true
+    Tab Middle Click Close Document=false
     Tabbar Tab Limit=0
 
     [KTextEditor Document]
@@ -113,7 +116,7 @@
     Allow Mark Menu=true
     Auto Brackets=true
     Auto Center Lines=0
-    Auto Completion=false
+    Auto Completion=true
     Auto Completion Preselect First Entry=true
     Backspace Remove Composed Characters=false
     Bookmark Menu Sorting=0
@@ -134,9 +137,9 @@
     Folding Preview=true
     Icon Bar=false
     Input Mode=0
-    Keyword Completion=false
-    Line Modification=true
-    Line Numbers=true
+    Keyword Completion=true
+    Line Modification=false
+    Line Numbers=false
     Max Clipboard History Entries=20
     Maximum Search History Size=100
     Mouse Paste At Cursor Position=false
@@ -150,11 +153,11 @@
     Scroll Past End=false
     Search/Replace Flags=140
     Shoe Line Ending Type in Statusbar=true
-    Show Documentation With Completion=false
+    Show Documentation With Completion=true
     Show File Encoding=true
     Show Folding Icons On Hover Only=true
     Show Line Count=false
-    Show Scrollbars=0
+    Show Scrollbars=1
     Show Statusbar Dictionary=false
     Show Statusbar Highlighting Mode=false
     Show Statusbar Input Mode=false
@@ -167,8 +170,15 @@
     User Sets Of Chars To Enclose Selection=
     Vi Input Mode Steal Keys=false
     Vi Relative Line Numbers=false
-    Word Completion=false
+    Word Completion=true
     Word Completion Minimal Word Length=3
     Word Completion Remove Tail=true
+
+    [Kate Plugin]
+    kateprojectplugin=false
+    kategoritblameplugin=false
+    lspclientplugin=false
+    katekonsoleplugin=false
+    kateformatterplugin=false
   '';
 }

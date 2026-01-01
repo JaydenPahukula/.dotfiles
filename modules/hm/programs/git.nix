@@ -1,5 +1,5 @@
 # git config
-{...}: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "JaydenPahukula";
@@ -11,6 +11,7 @@
       alias = {
         "unstage" = "restore --staged";
       };
+      core.editor = "${pkgs.vim}/bin/vim";
     };
   };
 }
