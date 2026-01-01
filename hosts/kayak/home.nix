@@ -67,7 +67,6 @@
     # apps
     discord
     gimp
-    kdePackages.kate
     libreoffice-qt6
     postman
     spotify

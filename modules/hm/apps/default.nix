@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./chrome.nix
+    ./kate.nix
     ./vscode.nix
   ];
 

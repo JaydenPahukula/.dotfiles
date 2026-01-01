@@ -63,7 +63,6 @@
     dolphin-plugins
     elisa
     gwenview
-    kate
     khelpcenter
     krdp
     okular
