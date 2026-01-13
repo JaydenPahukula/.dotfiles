@@ -26,4 +26,8 @@
       . "${sessionVarsScript}"
     '';
   };
+
+  home.shellAliases = {
+    open = "xdg-open";
+  };
 }
