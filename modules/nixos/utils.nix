@@ -3,7 +3,7 @@
     brightnessctl
     efibootmgr
     file
-    hostname
+    inetutils
     killall
     neofetch
     nix-tree
