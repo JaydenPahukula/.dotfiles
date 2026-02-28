@@ -8,6 +8,7 @@
     ./direnv.nix
     ./git.nix
     ./python.nix
+    ./ssh.nix
     ./trash.nix
   ];
 
