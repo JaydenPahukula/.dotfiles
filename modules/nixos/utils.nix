@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     brightnessctl
     efibootmgr
@@ -20,6 +24,6 @@
   ];
 
   environment.variables = {
-    "EDITOR" = "vim";
+    "EDITOR" = lib.mkOverride 500 "${pkgs.vim}/bin/vim";
   };
 }
