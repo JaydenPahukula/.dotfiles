@@ -4,7 +4,7 @@
     # start on boot
     startup.startupScript."klipper" = {
       runAlways = true;
-      text = "${pkgs.libsForQt5.plasma-workspace}/bin/klipper &";
+      text = "${pkgs.kdePackages.plasma-workspace}/bin/klipper &";
     };
     # config
     configFile."klipperrc" = {

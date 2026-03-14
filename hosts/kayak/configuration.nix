@@ -9,8 +9,10 @@
   services.fprintd.enable = true;
 
   # power
-  services.logind.lidSwitch = "hibernate";
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login = {
+    HandleLidSwitch = "hibernate";
+    HandlePowerKey = "ignore";
+  };
 
   time.timeZone = "America/Chicago";
 
