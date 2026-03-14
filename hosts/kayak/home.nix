@@ -63,9 +63,10 @@
     lowBattery = battery;
   };
 
+  programs.discord.enable = true;
+
   home.packages = with pkgs; [
     # apps
-    discord
     gimp
     libreoffice-qt6
     postman
