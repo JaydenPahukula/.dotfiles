@@ -8,6 +8,10 @@
   # enable fingerprint
   services.fprintd.enable = true;
 
+  # enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # power
   services.logind.settings.Login = {
     HandleLidSwitch = "hibernate";
