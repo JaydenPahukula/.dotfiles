@@ -47,7 +47,7 @@
   };
 
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # makes apps not blurry on wayland
+    # NIXOS_OZONE_WL = "1"; # makes apps not blurry on wayland ; unneeded?
 
     XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
