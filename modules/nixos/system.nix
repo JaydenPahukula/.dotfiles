@@ -84,7 +84,7 @@
   programs.bash.loginShellInit = ". ${pkgs.writeShellScript "start-plasma" ''
     if [[ $(tty) == /dev/tty1 ]]; then
       echo -e "\nLaunching KDE Plasma...\n"
-      startplasma-wayland
+      ${pkgs.kdePackages.plasma-workspace}/bin/startplasma-wayland
       logout
     else
       echo
