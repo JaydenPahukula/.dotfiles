@@ -1,3 +1,4 @@
 - handle missing colors
 - add more to gpu module
 - racecar sleeping stuff
+- check if systemd.services.NetworkManager-wait-online needs to be enabled
