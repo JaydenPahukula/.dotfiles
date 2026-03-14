@@ -24,10 +24,10 @@
   };
 
   programs.discord.enable = true;
+  programs.google-chrome.enable = true;
 
   home.packages = with pkgs; [
     # apps
-    discord
     spotify
 
     # games

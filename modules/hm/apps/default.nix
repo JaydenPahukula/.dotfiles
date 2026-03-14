@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./chrome.nix
     ./discord.nix
+    ./google-chrome.nix
     ./kate.nix
     ./vscode.nix
   ];
