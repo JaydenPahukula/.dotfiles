@@ -4,7 +4,7 @@ in
   inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = inputs.nixpkgs.legacyPackages.${system};
     modules = [
-      "${root}/modules/hm"
+      "${root}/modules/home-manager"
       "${root}/hosts/${name}/home.nix"
     ];
     extraSpecialArgs = {
