@@ -2,10 +2,10 @@
 {
   pkgs,
   lib,
-  name,
+  host,
   ...
 }: {
-  networking.hostName = name;
+  networking.hostName = host.name;
 
   services.fwupd.enable = true;
 

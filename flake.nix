@@ -18,18 +18,18 @@
   };
 
   outputs = inputs: let
-    hosts = {
-      "kayak" = {
+    hosts = [
+      {
+        name = "kayak";
         system = "x86_64-linux";
-      };
-      "racecar" = {
+      }
+      {
+        name = "racecar";
         system = "x86_64-linux";
-      };
-    };
-    mkSystem = import ./util/mksystem.nix {inherit inputs;};
-    mkHome = import ./util/mkhome.nix {inherit inputs;};
+      }
+    ];
   in {
-    nixosConfigurations = builtins.mapAttrs mkSystem hosts;
-    homeConfigurations = builtins.mapAttrs mkHome hosts;
+    nixosConfigurations = import ./util/mkNixosConfigs.nix {inherit inputs hosts;};
+    homeConfigurations = import ./util/mkHomeConfigs.nix {inherit inputs hosts;};
   };
 }
