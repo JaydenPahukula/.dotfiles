@@ -1,5 +1,5 @@
 # home manager modules
-{...}: {
+{host, ...}: {
   imports = [
     ./apps
     ./programs
@@ -15,6 +15,6 @@
   home = rec {
     username = "jayden";
     homeDirectory = "/home/${username}";
-    stateVersion = "23.11"; # DO NOT CHANGE!
+    stateVersion = host.stateVersion;
   };
 }

@@ -1,5 +1,9 @@
 # nixos modules
-{pkgs, ...}: {
+{
+  host,
+  pkgs,
+  ...
+}: {
   imports = [
     ./apps
     ./nix.nix
@@ -13,5 +17,5 @@
     pkgs.home-manager
   ];
 
-  system.stateVersion = "23.11"; # IMPORTANT: DO NOT CHANGE
+  system.stateVersion = host.stateVersion;
 }

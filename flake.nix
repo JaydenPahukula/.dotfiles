@@ -22,10 +22,12 @@
       {
         name = "kayak";
         system = "x86_64-linux";
+        stateVersion = "23.11";
       }
       {
         name = "racecar";
         system = "x86_64-linux";
+        stateVersion = "23.11";
       }
     ];
   in {
