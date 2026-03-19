@@ -18,18 +18,18 @@
   };
 
   outputs = inputs: let
-    hosts = [
-      {
-        name = "kayak";
+    hosts = {
+      "kayak" = {
         system = "x86_64-linux";
         stateVersion = "23.11";
-      }
-      {
-        name = "racecar";
+        type = "desktop";
+      };
+      "racecar" = {
         system = "x86_64-linux";
         stateVersion = "23.11";
-      }
-    ];
+        type = "desktop";
+      };
+    };
   in {
     nixosConfigurations = import ./util/mkNixosConfigs.nix {inherit inputs hosts;};
     homeConfigurations = import ./util/mkHomeConfigs.nix {inherit inputs hosts;};

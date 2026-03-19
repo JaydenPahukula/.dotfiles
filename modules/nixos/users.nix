@@ -7,7 +7,7 @@
   users.users."jayden" = {
     isNormalUser = true;
     description = "Jayden";
-    shell = pkgs.bash;
+    shell = pkgs.bashInteractive;
     extraGroups =
       [
         "networkmanager"
