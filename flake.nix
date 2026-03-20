@@ -29,6 +29,11 @@
         stateVersion = "23.11";
         type = "desktop";
       };
+      "radar" = {
+        system = "x86_64-linux";
+        stateVersion = "25.05";
+        type = "server";
+      };
     };
   in {
     nixosConfigurations = import ./util/mkNixosConfigs.nix {inherit inputs hosts;};
