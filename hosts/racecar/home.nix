@@ -8,7 +8,7 @@
     gpu.hwmon-path = "/sys/class/hwmon/hwmon6/device/gpu_busy_percent";
   };
 
-  wallpaper = "${root}/assets/wallpapers/adriano.jpg";
+  programs.plasma.wallpaper = "${root}/assets/wallpapers/adriano.jpg";
 
   programs.plasma.powerdevil.AC = {
     turnOffDisplay = {
@@ -25,6 +25,9 @@
 
   programs.discord.enable = true;
   programs.google-chrome.enable = true;
+
+  programs.direnv.enable = true;
+  programs.pypy.enable = true;
 
   home.packages = with pkgs; [
     # apps

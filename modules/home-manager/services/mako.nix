@@ -1,24 +1,23 @@
-# wired-notify config
+# mako
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    nerd-fonts.hack
-  ];
+  config = lib.mkIf config.services.mako.enable {
+    home.packages = with pkgs; [
+      nerd-fonts.hack
+    ];
 
-  # start mako on boot
-  programs.plasma.startup.startupScript."mako" = {
-    runAlways = true;
-    text = "${pkgs.mako}/bin/mako &";
-  };
+    # start mako on boot
+    programs.plasma.startup.startupScript."mako" = {
+      runAlways = true;
+      text = "${pkgs.mako}/bin/mako &";
+    };
 
-  # mako config
-  services.mako = {
-    enable = true;
-
-    settings = with config.colors; {
+    # mako config
+    services.mako.settings = with config.colors; {
       font = "Hack Nerd Font 10";
       anchor = "top-right";
       default-timeout = "3000";
@@ -35,7 +34,7 @@
       "app-name=Spotify" = {
         format = "<b><span foreground='#${spotify}' size='12pt'></span> %s</b>\\n%b";
       };
-      "app-name=discord" = {
+      "app-name=discord" = lib.mkIf config.programs.discord.enable {
         format = "<b><span foreground='#${discord}' size='12pt'></span>  %s</b>\\n%b";
       };
       "app-name=volume" = {

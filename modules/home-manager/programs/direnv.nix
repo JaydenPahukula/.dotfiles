@@ -1,8 +1,13 @@
 # direnv config
-{...}: {
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
+{
+  config,
+  lib,
+  ...
+}: {
+  config = lib.mkIf config.programs.direnv.enable {
+    programs.direnv = {
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
   };
 }

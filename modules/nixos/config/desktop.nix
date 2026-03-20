@@ -1,4 +1,4 @@
-# system-level config for my desktop machines
+# default system-level config for my desktop machines
 {
   host,
   lib,

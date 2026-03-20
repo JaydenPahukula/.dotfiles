@@ -1,8 +1,12 @@
 # git config
-{pkgs, ...}: {
-  programs.git = {
-    enable = true;
-    settings = {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  config = lib.mkIf config.programs.git.enable {
+    programs.git.settings = {
       user.name = "JaydenPahukula";
       user.email = "jayden.pahukula@gmail.com";
       format.pretty = "oneline";

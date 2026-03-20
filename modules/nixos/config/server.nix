@@ -1,4 +1,4 @@
-# system-level config for my server (headless) machines
+# default system-level config for my server (headless) machines
 {
   host,
   lib,

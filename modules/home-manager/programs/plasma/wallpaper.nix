@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.wallpaper = lib.mkOption {
+  options.programs.plasma.wallpaper = lib.mkOption {
     type = lib.types.nullOr lib.types.path;
     default = null;
     example = ./Pictures/wallpaper.png;
@@ -14,10 +14,8 @@
     '';
   };
 
-  config.programs.plasma = lib.mkIf (config.wallpaper != null) {
-    workspace.wallpaper = config.wallpaper;
-
-    # fix wallpaper issues
+  config.programs.plasma = lib.mkIf (config.programs.plasma.enable && config.programs.plasma.wallpaper != null) {
+    workspace.wallpaper = config.programs.plasma.wallpaper;
     startup.desktopScript."wallpaper_picture".runAlways = true;
   };
 

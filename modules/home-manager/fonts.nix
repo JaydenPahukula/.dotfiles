@@ -1,6 +1,7 @@
 # fonts
 {
   config,
+  host,
   lib,
   ...
 }: {
@@ -13,7 +14,7 @@
     '';
   };
 
-  config = {
+  config = lib.mkIf (host.type == "desktop") {
     fonts.fontconfig.enable = true;
 
     xdg.configFile."fontconfig/conf.d/78-disable-fonts.conf".text = let

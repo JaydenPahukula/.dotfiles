@@ -4,7 +4,7 @@
   root,
   ...
 }: {
-  wallpaper = "${root}/assets/wallpapers/windrises.png";
+  programs.plasma.wallpaper = "${root}/assets/wallpapers/windrises.png";
 
   programs.waybar.temp.thermal-zone = 2; # SEN5
 
@@ -65,6 +65,9 @@
 
   programs.discord.enable = true;
   programs.google-chrome.enable = true;
+
+  programs.direnv.enable = true;
+  programs.pypy.enable = true;
 
   home.packages = with pkgs; [
     # apps

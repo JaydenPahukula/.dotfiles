@@ -1,22 +1,17 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
-    ./lf
     ./plasma
-    ./waybar
     ./yakuake
     ./bash.nix
+    ./discord.nix
     ./direnv.nix
     ./git.nix
+    ./google-chrome.nix
+    ./kate.nix
+    ./lf.nix
     ./python.nix
-    ./ssh.nix
     ./trash.nix
-  ];
-
-  # misc programs
-  home.packages = with pkgs; [
-    btop
-    libnotify
-    wayland-utils
-    wl-clipboard
+    ./vscode.nix
+    ./waybar.nix
   ];
 }

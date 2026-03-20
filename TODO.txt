@@ -7,3 +7,9 @@
 - fix vscode Request textDocument/definition failed. message
 - make hosts.*.headless optional in flake.nix
 - validate host paths in flake.nix
+- add warning messages for apps and stuff being enabled in headless machines
+- fix yakuake-session, maybe it can be removed
+- improve lf file preview
+- get new file explorer
+- fix kate config file errors on startup
+- idk maybe do something with colors.nix and fonts.nix
