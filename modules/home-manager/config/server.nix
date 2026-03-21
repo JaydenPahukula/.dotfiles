@@ -5,6 +5,8 @@
   ...
 }: {
   config = lib.mkIf (host.type == "server") {
+    programs.ssh.enable = true;
+    programs.ssh.enableDefaultConfig = false;
     programs.trash.enable = true;
   };
 }
