@@ -13,3 +13,7 @@
 - get new file explorer
 - fix kate config file errors on startup
 - idk maybe do something with colors.nix and fonts.nix
+- check that cloning this repo anywhere works
+- update hosts/template
+- test empty host configuration
+- move time zone to home-manager config

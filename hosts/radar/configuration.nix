@@ -7,6 +7,8 @@
     router-ip = "192.168.0.1";
     radar-ip = "192.168.0.99";
   in {
+    time.timeZone = "America/Chicago";
+
     # internal dns
     services.dnsmasq = {
       enable = true;
