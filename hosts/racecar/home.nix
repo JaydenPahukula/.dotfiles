@@ -44,4 +44,14 @@
 
     nodejs_22
   ];
+
+  programs.ssh.enable = true;
+  programs.ssh.matchBlocks = {
+    "radar" = {
+      hostname = "192.168.0.99";
+      user = "jayden";
+      identityFile = "~/.ssh/id_ed25519";
+      identitiesOnly = true;
+    };
+  };
 }
