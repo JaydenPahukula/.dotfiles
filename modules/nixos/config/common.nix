@@ -39,6 +39,7 @@
 
       # common utilities
       brightnessctl
+      dig
       efibootmgr
       file
       inetutils
