@@ -3,10 +3,7 @@
     ./hardware-configuration.nix
   ];
 
-  config = let
-    router-ip = "192.168.0.1";
-    radar-ip = "192.168.0.99";
-  in {
+  config = {
     time.timeZone = "America/Chicago";
 
     networking.firewall = {
@@ -22,9 +19,7 @@
         local-service = "net"; # only listen to local network
         server = ["1.1.1.1" "71.10.216.1" "71.10.216.2"]; # upstream dns servers
         address = [
-          "/router/${router-ip}"
-          "/radar/${radar-ip}"
-          "/.jaydenp.dev/${radar-ip}"
+          "/grafana.jaydenp.dev/192.168.0.99"
         ];
       };
     };
