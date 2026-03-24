@@ -1,0 +1,13 @@
+keys:
+  - &master age1h3lacu4m69z7gyle7uja6929cunkgjkygg986p3zfx02fectj5uqgal74w
+  - &radar age1ev3kvsuh3duhmqaxmh6re42qpdapq99eqncugge6zntxsqxsxyfq9jrujs
+creation_rules:
+  # - path_regex: secrets/common\.yaml$
+  #   key_groups:
+  #     - age:
+  #         - *master
+  - path_regex: secrets/host_radar\.yaml$
+    key_groups:
+      - age:
+          - *master
+          - *radar

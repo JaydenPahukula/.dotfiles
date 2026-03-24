@@ -3,5 +3,6 @@
     ./config
     ./programs
     ./services
+    ./sops.nix
   ];
 }

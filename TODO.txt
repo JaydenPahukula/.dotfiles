@@ -17,4 +17,3 @@
 - update hosts/template
 - test empty host configuration
 - move time zone to home-manager config
-- set up sops

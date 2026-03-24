@@ -38,6 +38,7 @@
       home-manager
 
       # common utilities
+      age
       brightnessctl
       dig
       efibootmgr

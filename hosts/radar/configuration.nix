@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  root,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -28,12 +32,10 @@
     services.grafana = {
       enable = true;
       settings = {
-        server = {
-          http_port = 3000;
-          enforce_domain = true;
-          enable_gzip = true;
-          domain = "grafana.jaydenp.dev";
-        };
+        server.http_port = 3000;
+        server.enforce_domain = true;
+        server.enable_gzip = true;
+        server.domain = "grafana.jaydenp.dev";
         analytics.reporting_enabled = false;
       };
     };
@@ -62,9 +64,16 @@
         "jaydenp.dev" = {
           domain = "*.jaydenp.dev";
           dnsProvider = "cloudflare";
-          credentialsFile = "/run/secrets/cloudflare";
+          environmentFile = config.sops.secrets."cloudflare.env".path;
           dnsPropagationCheck = true;
         };
+      };
+    };
+
+    sops = {
+      enable = true;
+      secrets = {
+        "cloudflare.env".sopsFile = "${root}/secrets/host_radar.yaml";
       };
     };
 
