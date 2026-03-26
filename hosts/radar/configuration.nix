@@ -4,7 +4,9 @@
   ...
 }: {
   imports = [
+    ./grafana.nix
     ./hardware-configuration.nix
+    ./prometheus.nix
   ];
 
   config = {
@@ -24,19 +26,8 @@
         server = ["1.1.1.1" "71.10.216.1" "71.10.216.2"]; # upstream dns servers
         address = [
           "/grafana.jaydenp.dev/192.168.0.99"
+          "/prometheus.jaydenp.dev/192.168.0.99"
         ];
-      };
-    };
-
-    # grafana dashboard
-    services.grafana = {
-      enable = true;
-      settings = {
-        server.http_port = 3000;
-        server.enforce_domain = true;
-        server.enable_gzip = true;
-        server.domain = "grafana.jaydenp.dev";
-        analytics.reporting_enabled = false;
       };
     };
 
@@ -44,16 +35,6 @@
       enable = true;
       recommendedTlsSettings = true;
       recommendedProxySettings = true;
-      virtualHosts = {
-        "grafana.jaydenp.dev" = {
-          useACMEHost = "jaydenp.dev";
-          forceSSL = true;
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:${toString config.services.grafana.settings.server.http_port}";
-            proxyWebsockets = true;
-          };
-        };
-      };
     };
     users.users.nginx.extraGroups = ["acme"];
 
