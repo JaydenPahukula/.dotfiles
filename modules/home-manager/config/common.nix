@@ -21,6 +21,7 @@
 
     programs.bash.enable = true;
     programs.git.enable = true;
+    programs.lf.enable = true;
 
     home.shellAliases = {
       "open" = "xdg-open";
