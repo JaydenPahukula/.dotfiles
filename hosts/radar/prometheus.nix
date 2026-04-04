@@ -1,11 +1,12 @@
 {config, ...}: {
   services.prometheus = {
     enable = true;
+    listenAddress = "127.0.0.1";
     port = 9090;
-    stateDir = "prometheus2"; # /var/lib/prometheus2
-    retentionTime = "15d";
-    globalConfig.scrape_interval = "1m";
-    globalConfig.scrape_timeout = "10s";
+    stateDir = "prometheus2"; # /var/lib/prometheus2 (see bind mount below)
+    retentionTime = "30d";
+    globalConfig.scrape_interval = "15s";
+    globalConfig.scrape_timeout = "15s";
 
     scrapeConfigs = [
       {
@@ -22,16 +23,21 @@
       node = {
         enable = true;
         port = 9000;
-        # For the list of available collectors, run, depending on your install:
-        # - Flake-based: nix run nixpkgs#prometheus-node-exporter -- --help
-        # - Classic: nix-shell -p prometheus-node-exporter --run "node_exporter --help"
+        extraFlags = ["--collector.disable-defaults"]; # disable all connectors except for the ones specified below
         enabledCollectors = [
-          "ethtool"
-          "cpu.info"
-          "softirqs"
-          "systemd"
-          "tcpstat"
-          "wifi"
+          "cpu"
+          "loadavg"
+          "meminfo"
+          "vmstat"
+          "filesystem"
+          "diskstats"
+          "netdev"
+          "netstat"
+          "sockstat"
+          "hwmon"
+          "stat"
+          "time"
+          "filefd"
         ];
       };
     };
